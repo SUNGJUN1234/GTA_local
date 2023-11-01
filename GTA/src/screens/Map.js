@@ -8,7 +8,7 @@ const Map = () => {
 
   return (
     <View style={{ flex: 1 }}>
-      {position ? (
+      {position && position.lat !== 0? (
      <MapView
      style={{ flex: 1 }}
      initialRegion={{
@@ -17,26 +17,14 @@ const Map = () => {
        latitudeDelta: 0.01, // 작은 값으로 변경하여 더 확대
        longitudeDelta: 0.01, // 작은 값으로 변경하여 더 확대
      }}
-    //  onRegionChange={region => {
-    //   setPosition({
-    //      lat: region.latitude,
-    //      lng: region.longitude,
-    //    });
-    //  }}
-    //  onRegionChangeComplete={region => {
-    //   setPosition({
-    //      lat: region.latitude,
-    //      lng: region.longitude,
-    //    });
-    //  }}
    >
      <Marker
        coordinate={{
          latitude: position.lat,
          longitude: position.lng,
        }}
-       title="This is a marker"
-       description="This is a marker example"
+       title="내 위치"
+       description="위치 설명"
      />
    </MapView>
       ) : (

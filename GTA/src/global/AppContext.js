@@ -11,8 +11,8 @@ export const useAppContext = () => {
 // Context Provider
 export const AppContextProvider = ({ children }) => {
   const [ position , setPosition] = useState({
-    lat : 35.15955454,
-    lng : 126.8526012,
+    lat : 0,
+    lng : 0,
   });
 
   return (
